@@ -151,35 +151,58 @@ void ModuleEditor::DrawEditor()
                     ImGui::TextColored({ 255,255,0,255 }, "%s", cpuModel);
                     ImGui::Text("CPU Cache Line Size: %d bytes", cacheLineSize);
                     ImGui::Text("CPU Core Count: %d", cpuCount);
+
+                    ImGui::Separator();
                 }
             }
 
-            if (ImGui::CollapsingHeader("Window Settings"))
+            if (ImGui::CollapsingHeader("Screen Settings"))
             {
-                if (ImGui::CollapsingHeader("Style Options"))
-                {
-                    ImGuiStyle& style = ImGui::GetStyle();
-                    static ImGuiStyle ref_saved_style;
+                ImGui::TextColored({ 255,255,0,255 }, "Window");
+                ImGui::Separator();
 
-                    if (ImGui::ShowStyleSelector("Colors##Selector"))
-                        ref_saved_style = style;
-                }
-                if (ImGui::CollapsingHeader("Render Options"))
-                {
-                    if (ImGui::Checkbox("Wireframe", &App->renderer3D->activeWire))
-                    {
-                    }
+                ImGui::SliderInt("Width", &Width, 426, 1920);
+                ImGui::SliderInt("Height", &Height, 240, 1080);
 
-                    if (ImGui::Checkbox("Normals", &App->renderer3D->activeNormals))
-                    {
-                    }
-                    
+                ImGui::Checkbox("FullScreen", &fullscreen);
+                ImGui::Checkbox("Borderless", &borderless);
+
+                if (ImGui::Button("Apply"))
+                {
+                    App->window->screenSettings(Width, Height, fullscreen, borderless);
                 }
+
+                ImGui::Separator();
+            }
+
+            if (ImGui::CollapsingHeader("Style Options"))
+            {
+                ImGuiStyle& style = ImGui::GetStyle();
+                static ImGuiStyle ref_saved_style;
+
+                if (ImGui::ShowStyleSelector("Colors##Selector"))
+                    ref_saved_style = style;
+
+                ImGui::Separator();
+            }
+
+            if (ImGui::CollapsingHeader("Render Options"))
+            {
+                if (ImGui::Checkbox("Wireframe", &App->renderer3D->activeWire))
+                {
+
+                }
+                if (ImGui::Checkbox("Normals", &App->renderer3D->activeNormals))
+                {
+
+                }
+
+                ImGui::Separator();
             }
         }
         ImGui::End();
     }
-    if (ImGui::Begin("Consol"))
+    if (ImGui::Begin("Console"))
     {
        App->console->UpdateConsole();
     }
@@ -196,55 +219,60 @@ void ModuleEditor::DrawEditor()
     }
     if (ImGui::BeginMenu("GameObjects"))
     {
-        if (ImGui::MenuItem("Cube"))
+        if (ImGui::BeginMenu("GameObjects"))
         {
-            LOG("Create a Cube GameObject");
-            App->mesh->LoadMesh("../Assets/Cube.fbx");
-            App->renderer3D->BindBuffers();
+            if (ImGui::MenuItem("Cube"))
+            {
+                LOG("Create a Cube GameObject");
+                App->mesh->LoadMesh("../Assets/Cube.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Shpere"))
-        {
-            LOG("Create a Shpere GameObject");
-            App->mesh->LoadMesh("../Assets/Sphere.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Shpere"))
+            {
+                LOG("Create a Shpere GameObject");
+                App->mesh->LoadMesh("../Assets/Sphere.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Cone"))
-        {
-            LOG("Create a Cone GameObject");
-            App->mesh->LoadMesh("../Assets/Cone.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Cone"))
+            {
+                LOG("Create a Cone GameObject");
+                App->mesh->LoadMesh("../Assets/Cone.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Cylinder"))
-        {
-            LOG("Create a Cylinder GameObject");
-            App->mesh->LoadMesh("../Assets/Cylinder.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Cylinder"))
+            {
+                LOG("Create a Cylinder GameObject");
+                App->mesh->LoadMesh("../Assets/Cylinder.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Torus"))
-        {
-            LOG("Create a Torus GameObject");
-            App->mesh->LoadMesh("../Assets/Torus.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Torus"))
+            {
+                LOG("Create a Torus GameObject");
+                App->mesh->LoadMesh("../Assets/Torus.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Plane"))
-        {
-            LOG("Create a Plane GameObject");
-            App->mesh->LoadMesh("../Assets/Plane.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Plane"))
+            {
+                LOG("Create a Plane GameObject");
+                App->mesh->LoadMesh("../Assets/Plane.fbx");
+                App->renderer3D->BindBuffers();
 
-        }
-        if (ImGui::MenuItem("Polygon"))
-        {
-            LOG("Create a Polygon GameObject");
-            App->mesh->LoadMesh("../Assets/Polygon.fbx");
-            App->renderer3D->BindBuffers();
+            }
+            if (ImGui::MenuItem("Polygon"))
+            {
+                LOG("Create a Polygon GameObject");
+                App->mesh->LoadMesh("../Assets/Polygon.fbx");
+                App->renderer3D->BindBuffers();
 
+            }
+            ImGui::EndMenu();
         }
+
         if (ImGui::MenuItem("Pikachu"))
         {
             LOG("Create a Pikachu GameObject");
@@ -284,7 +312,7 @@ void ModuleEditor::DrawEditor()
         if (ImGui::BeginMenu("About"))
         {
 
-            ImGui::TextColored({ 255,255,0,255 }, "Amarillo Engine v0.1");
+            ImGui::TextColored({ 255,255,0,255 }, "Valkyrie Engine v0.1");
 
             std::string licenseContent = loadFile("../../LICENSE");
             if (!licenseContent.empty())
@@ -304,7 +332,7 @@ void ModuleEditor::DrawEditor()
       
         if (ImGui::MenuItem("GitHub"))
         {
-            ShellExecute(NULL, "open", "https://github.com/MarcelSunyer/Game_Engine", 0, 0, SW_SHOWNORMAL);
+            ShellExecute(NULL, "open", "https://github.com/Neffyer/Valkyrie_Engine_2", 0, 0, SW_SHOWNORMAL);
         }
         ImGui::EndMenu();
     }

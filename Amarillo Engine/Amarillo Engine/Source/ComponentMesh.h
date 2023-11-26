@@ -19,11 +19,11 @@ public:
 	void Disable() override;
 	void OnEditor() override;
 
+	ModuleMesh::Mesh* GetMesh();
+
 	void SetMesh(ModuleMesh::Mesh* mesh);
 	void SetPath(std::string path);
 
-
 	ComponentMesh(GameObject* parent);
-private:
 
 };

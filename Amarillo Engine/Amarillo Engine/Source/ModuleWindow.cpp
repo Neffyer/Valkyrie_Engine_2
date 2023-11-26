@@ -99,6 +99,28 @@ void ModuleWindow::SetTitle(const char* title)
 	SDL_SetWindowTitle(window, title);
 }
 
+void ModuleWindow::screenSettings(int width, int height, bool fullscreen, bool borderless)
+{
+	Uint32 flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN;
+
+	if (fullscreen == true)
+	{
+		flags |= SDL_WINDOW_FULLSCREEN;
+	}
+
+	if (borderless == true)
+	{
+		SDL_SetWindowBordered(window, SDL_FALSE);
+	}
+	else
+	{
+		SDL_SetWindowBordered(window, SDL_TRUE);
+	}
+
+	SDL_SetWindowFullscreen(window, flags);
+	SDL_SetWindowSize(window, width, height);
+}
+
 void ModuleWindow::InitLogs()
 {
 	App->editor->AddLog("-------------- Application Creation --------------");

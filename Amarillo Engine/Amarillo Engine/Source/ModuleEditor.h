@@ -46,7 +46,8 @@ public:
 	std::vector<float> vecFPSLog;
 	const char* lastValue = "";
 
-public:  //Windows Settings
+	
+	//Windows Settings
 	//Brightness value
 	float brightnessFactor = 1.5f;
 
@@ -55,7 +56,7 @@ public:  //Windows Settings
 	bool showWindow = true;
 	bool showConsole = false;
 	
-public:
+
 	int w = SCREEN_WIDTH;
 	int h = SCREEN_HEIGHT;
 	bool IoConfirmer = false;
@@ -63,6 +64,11 @@ public:
 	int logs_array_size;
 
 	bool wireButton = false;
+
+	int Width = 1080;
+	int Height = 720;
+	bool fullscreen = false;
+	bool borderless = false;
 
 };
 

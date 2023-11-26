@@ -4,7 +4,10 @@
 #include "Module.h"
 #include "Globals.h"
 #include "glmath.h"
+
+#include "../External/MathGeoLib/include/Math/float3x3.h"
 #include "../External/MathGeoLib/include/MathGeoLib.h"
+
 #include <vector>
 #include "../External/Glew/include/glew.h"
 

@@ -28,12 +28,12 @@ enum update_status
 };
 
 // Configuration -----------
-#define SCREEN_WIDTH 1420
-#define SCREEN_HEIGHT 820
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 #define SCREEN_SIZE 1
 #define WIN_FULLSCREEN false
 #define WIN_RESIZABLE true
 #define WIN_BORDERLESS false
 #define WIN_FULLSCREEN_DESKTOP false
 #define VSYNC true
-#define TITLE "Amarillo Engine by Eric Luque & Marcel Sunyer"
+#define TITLE "Valkyrie Engine by Joel Maldonado"

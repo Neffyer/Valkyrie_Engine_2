@@ -21,8 +21,8 @@ public:
 	virtual void Enable() {};
 	virtual void Update() {};
 	virtual void Disable() {};
-
 	virtual void OnEditor() {};
+	virtual void DebugDraw() {};
 	
 
 public:

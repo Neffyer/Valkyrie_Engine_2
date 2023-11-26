@@ -6,6 +6,7 @@ GameObject::GameObject(std::string name) : mName(name), active(true), parent(nul
 {
 	transform = (ComponentTransform*)AddComponent(ComponentTypes::TRANSFORM);
 	//texture = (ComponentTexture*)AddComponent(ComponentTypes::TEXTURE);
+	//InitBoundingBoxes();
 }
 
 GameObject::~GameObject()
