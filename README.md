@@ -1,8 +1,12 @@
-# Amarillo Engine
+# Valkyrie Engine
 
 ## Description
 
 The new 3D Game Engine under CITM development
+
+### Repository Link
+
+Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine).
 
 ## Key Features
 
@@ -20,10 +24,9 @@ The new 3D Game Engine under CITM development
 ○ Pressing “f” should focus the camera around the geometry.
 ○ Holding SHIFT duplicates movement speed
 
-## Developers
+## Developer
 
- - Eric Luque Romero - https://github.com/ericlr1
- - Marcel Sunyer Caldú - https://github.com/MarcelSunyer
+ - [Joel Maldonado Salvador](https://github.com/neffyer)
 
 ## License
 
