@@ -10,11 +10,11 @@ Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine).
 
 ## Key Features
 
- -  Model Import + Drag & Drop
- -  Texture Import
- -  GameObject hierarchy + Component Pattern
- -  Unity-like camera controls
- -  Editor tools (main menu and windows)
+ - Model Import + Drag & Drop
+ - Texture Import
+ - GameObject hierarchy + Component Pattern
+ - Unity-like camera controls
+ - Editor tools (main menu and windows)
 
 ## Controls
 
