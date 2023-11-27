@@ -18,11 +18,11 @@ Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine).
 
 ## Controls
 
-○ While Right clicking, “WASD” fps-like movement and free look around must be enabled.
-○ Mouse wheel should zoom in and out.
-○ Alt+Left click should orbit the object.
-○ Pressing “f” should focus the camera around the geometry.
-○ Holding SHIFT duplicates movement speed
+ ○ While Right clicking, “WASD” fps-like movement and free look around must be enabled.
+ ○ Mouse wheel should zoom in and out.
+ ○ Alt+Left click should orbit the object.
+ ○ Pressing “f” should focus the camera around the geometry.
+ ○ Holding SHIFT duplicates movement speed
 
 ## Developer
 
