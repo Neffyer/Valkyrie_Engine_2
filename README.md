@@ -6,7 +6,7 @@ The 3D Game Engine under CITM development
 
 ### Repository Link
 
-Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine).
+Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine_2).
 
 ## Key Features
 
