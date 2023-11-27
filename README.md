@@ -4,6 +4,10 @@
 
 The 3D Game Engine under CITM development
 
+### Repository Link
+
+Github: [Valkyrie Engine](https://github.com/Neffyer/Valkyrie_Engine).
+
 ## Key Features
 
  -  Model Import + Drag & Drop
@@ -14,15 +18,15 @@ The 3D Game Engine under CITM development
 
 ## Controls
 
-○ While Right clicking, “WASD” fps-like movement and free look around must be enabled.
-○ Mouse wheel should zoom in and out.
-○ Alt+Left click should orbit the object.
-○ Pressing “f” should focus the camera around the geometry.
-○ Holding SHIFT duplicates movement speed
+ - While Right clicking, “WASD” fps-like movement and free look around must be enabled.
+ - Mouse wheel should zoom in and out.
+ - Alt+Left click should orbit the object.
+ - Pressing “f” should focus the camera around the geometry.
+ - Holding SHIFT duplicates movement speed
 
 ## Developer
 
- - Joel Maldonado Salvador - https://github.com/Neffyer
+ - [Joel Maldonado Salvador](https://github.com/neffyer)
 
 ## License
 
