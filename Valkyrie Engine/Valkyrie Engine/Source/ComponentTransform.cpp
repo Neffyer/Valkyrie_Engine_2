@@ -101,14 +101,14 @@ inline void ComponentTransform::SetRotationEuler(float3 rotation)
 	RecalculateTransformHierarchy();
 }
 
-/*float3 ComponentTransform::GetScale()
+float3 ComponentTransform::GetScale()
 {
 	return world_scale;
-}*/
+}
 
 void ComponentTransform::UpdateMatrix() {
 
-	matrix = float4x4::FromTRS(new_position, new_rotation, new_scale);
+	transformMatrix = float4x4::FromTRS(new_position, new_rotation, new_scale);
 }
 
 void ComponentTransform::RecalculateTransformHierarchy()
@@ -134,7 +134,7 @@ void ComponentTransform::RecalculateTransformHierarchy()
 		{
 			parentWorldMatrix = recalculate->_parent->parent->transform->world_matrix;
 		}
-		recalculate->world_matrix = parentWorldMatrix * recalculate->matrix;
+		recalculate->world_matrix = parentWorldMatrix * recalculate->transformMatrix;
 
 		recalculate->world_matrix.Decompose(world_position, world_rotation, world_scale);
 		this->world_rotation_euler = world_rotation.ToEulerXYZ();

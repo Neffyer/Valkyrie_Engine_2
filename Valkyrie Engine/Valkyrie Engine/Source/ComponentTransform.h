@@ -27,6 +27,8 @@ public:
 	float3 inline GetScale() const { return this->world_scale; };
 	float4x4 inline GetTransformMatrix() const { return this->world_matrix; };
 
+	float3 GetScale();
+
 	ComponentTransform(GameObject* parent);
 	ComponentTransform(GameObject* parent, float3 position, float3 scale, Quat rotation);
 
@@ -46,5 +48,5 @@ public:
 	Quat new_rotation = Quat::FromEulerXYZ(0.0f, 0.0f, 0.0f);
 	float3 new_rotation_euler{ 0.0f, 0.0f, 0.0f };
 	float3 new_scale{1.0f, 1.0f, 1.0f};
-	float4x4 matrix = float4x4::identity;
+	float4x4 transformMatrix = float4x4::identity;
 };
