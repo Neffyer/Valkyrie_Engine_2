@@ -12,6 +12,8 @@
 #include <string> 
 #include "GameObject.h"
 
+#define MAX_NAME_CHARACTERS 32
+
 class ModuleEditor : public Module
 {
 public:
@@ -45,6 +47,8 @@ public:
 	
 	std::vector<float> vecFPSLog;
 	const char* lastValue = "";
+
+	char newName[MAX_NAME_CHARACTERS];
 
 	
 	//Windows Settings

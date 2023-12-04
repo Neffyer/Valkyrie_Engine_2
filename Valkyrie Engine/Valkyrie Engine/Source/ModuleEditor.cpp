@@ -427,6 +427,13 @@ void ModuleEditor::InspectorWindow()
         {
             ImGui::Begin("Inspector", &show_inspector_window);
             ImGui::Text(GameObject_selected->mName.c_str());
+            ImGui::Checkbox("Active", &GameObject_selected->active);
+            ImGui::SameLine;
+            strcpy(newName, GameObject_selected->mName.c_str());
+            if (ImGui::InputText(" ", &newName[0], sizeof(newName)))
+            {
+                GameObject_selected->mName = newName;
+            }
             ImGui::Separator();
 
             for (uint m = 0; m < GameObject_selected->components.size(); m++)
